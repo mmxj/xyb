@@ -1,0 +1,27 @@
+#My .topMenu {
+  background: #fff;
+}
+#My .topMenu .topMenuSao {
+  height: 2.5rem;
+  border-right: 0.01rem solid #f3f3f3 ;
+}
+#My .topMenu .topMenuCode {
+  height: 2.5rem;
+}
+#My .Menu {
+  margin-top: 0.2rem;
+}
+#My .Menu .MenuList {
+  background: #fff;
+  height: 2.05rem;
+  border-right: 0.01rem solid #f3f3f3;
+}
+#My .Menu .am-flexbox .am-flexbox-item {
+  margin-left: 0;
+}
+#My .Menu .border-no-right {
+  border: 0;
+}
+#My .Menu .border-bottom {
+  border-bottom: 1px solid #f3f3f3;
+}

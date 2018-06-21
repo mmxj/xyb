@@ -1,0 +1,35 @@
+#articelistWrap .articelist {
+  padding: 0.2rem 0;
+  border-bottom: 0.01rem solid #ddd;
+}
+#articelistWrap .articelist .list-title {
+  display: inline-block;
+  width: calc(100% - 2rem);
+  vertical-align: top;
+}
+#articelistWrap .articelist .list-title .list-title-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+#articelistWrap .articelist .list-title .articeBeginTime {
+  display: inline-block;
+  font-size: 0.24rem;
+  color: #999;
+}
+#articelistWrap .articelist .list-img {
+  display: inline-block;
+  height: 1.2rem;
+  width: 1.8rem;
+  margin-left: 0.2rem;
+  vertical-align: middle;
+}
+#articelistWrap .articelist .list-img img {
+  width: 100%;
+  height: 100%;
+}
+#articelistWrap .articelist:last-child {
+  border-bottom: 0;
+}

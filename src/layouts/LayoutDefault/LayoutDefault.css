@@ -1,0 +1,36 @@
+#LayoutDefault {
+  padding-top: 0.88rem;
+  padding-bottom: 0.98rem;
+  box-sizing: border-box;
+  height: 100%;
+}
+#LayoutDefault .navBar {
+  background: #29bfff;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 0.88rem;
+  width: 100%;
+  z-index: 100;
+}
+#LayoutDefault .toast-example {
+  display: flex;
+  justify-content: flex-start;
+}
+#LayoutDefault .align {
+  display: flex;
+  flex-direction: column;
+}
+#LayoutDefault .sub-title {
+  color: #888;
+  font-size: 14px;
+  padding: 30px 0 18px 0;
+}
+#LayoutDefault .content {
+  height: 100%;
+}
+#LayoutDefault .rightShao {
+  width: 0.44rem;
+  height: 0.44rem;
+}

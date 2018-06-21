@@ -1,0 +1,30 @@
+#BottomTabBar {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateZ(0);
+  height: 0.98rem;
+}
+#BottomTabBar .tabbar-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  #BottomTabBar {
+    bottom: 0.34rem;
+  }
+  #BottomTabBar:after {
+    content: '';
+    z-index: 9998;
+    left: 0;
+    bottom: -0.34rem;
+    position: absolute;
+    height: 0.34rem;
+    width: 100%;
+    background: #fff;
+  }
+}
