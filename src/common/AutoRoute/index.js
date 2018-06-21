@@ -8,7 +8,7 @@ import {PullToRefresh} from 'antd-mobile';
 import {connect} from 'react-redux';
 import {setRoute} from '../../redux/actions';
 
-import ShouYe from 'Src/routes/ShouYe/ShouYe' //引入跳转模块
+import ShouYe from '../../routes/ShouYe/ShouYe' //引入跳转模块
 import Medical from '../../routes/Medical/Medical'
 import PaymentCode from '../../routes/PaymentCode/PaymentCode'
 import My from '../../routes/My/My'
