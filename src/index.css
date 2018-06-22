@@ -2,7 +2,7 @@ body {
   overflow:auto;
   margin: 0;
   padding: 0;
-
+  color: #555;
   font-family: sans-serif;
   height:100%;
 }
@@ -25,4 +25,7 @@ html{
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+}
+.am-button-primary{
+  background:#29bfff;
 }

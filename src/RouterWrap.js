@@ -10,7 +10,7 @@ export default class RouterWrap extends Component{
                 <HashRouter>
                     <Switch>
                         <Route path="/" component={LayoutFull} exact/>
-                        <Route path="/newPage" component={LayoutDefault} />
+                        <Route path="/index" component={LayoutDefault} />
                     </Switch>
                 </HashRouter>
             </div>

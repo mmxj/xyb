@@ -1,4 +1,6 @@
 #PaymentCode {
+  height: 100%;
+  overflow: auto;
   padding: 0.2rem;
 }
 #PaymentCode .changeCard {

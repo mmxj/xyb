@@ -6,9 +6,11 @@ export default class LayoutFull extends Component{
     constructor(props){
         super(props);
         this.clickhandler=this.clickhandler.bind(this);
+        this.props.history.push('/index')
     }
+
     clickhandler(){
-        this.props.history.push('/newpage')
+        this.props.history.push('/index')
     }
     render(){
         return (

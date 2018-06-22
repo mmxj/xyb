@@ -6,16 +6,19 @@ import {Flex,WhiteSpace,Icon} from 'antd-mobile';
 import './ShouYe.less';
 import Banner from './component/Banner';
 import Article from './component/Article';
+import {connect} from 'react-redux';
 const shouyeLogo = require('../../assets/img/daidingdingdan.png');
 const shebaoLogo= require('../../assets/img/socialsecuritysearch.png');
 const shebaopayLogo= require('../../assets/img/socialsecuritypay.png');
-export default class ShouYe extends Component {
+class ShouYe extends Component {
     constructor(props){
         super(props);
         this.state={
             data:[],
             imgHeight:'3.52rem'
         }
+        // console.log(this.props.history.location)
+        this.goRoute=this.goRoute.bind(this);
     }
     componentDidMount(){
         setTimeout(() => {
@@ -23,6 +26,10 @@ export default class ShouYe extends Component {
                 data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI','TekJlZRVCjLFexlOCuWn'],
             });
         }, 100);
+    }
+    goRoute(url){ //跳转路由
+        url=this.props.history.location.pathname+url;
+        this.props.history.push(url)
     }
     render(){
         return(
@@ -60,7 +67,7 @@ export default class ShouYe extends Component {
                 <div className="articeWrap">
                     <div className="articeTitle clearfix">
                         <span className="articeTitleName">资讯</span>
-                        <span className="articeMore"><b className="articeMoreText">更多</b> <Icon className="articeIcon" size="sm" type="right"/></span>
+                        <span className="articeMore" onClick={()=>{this.goRoute('/moreartice')}} ><b className="articeMoreText">更多</b> <Icon className="articeIcon" size="sm" type="right"/></span>
                     </div>
                     <div className="articelistWrap">
                         <Article/>
@@ -70,3 +77,13 @@ export default class ShouYe extends Component {
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+
+    };
+}
+export default connect(mapStateToProps,mapDispatchToProps)(ShouYe)

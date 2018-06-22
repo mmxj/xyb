@@ -1,5 +1,6 @@
 /* autoprefixer: off */
 #ShouYe {
+  overflow: auto;
   color: #333;
 }
 #ShouYe .banner {

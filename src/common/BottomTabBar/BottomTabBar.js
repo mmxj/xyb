@@ -24,36 +24,31 @@ class BottomTabBar extends Component{
             >
                 <div className="tabbar-wrap">
                 <TabBar
-                    unselectTintColor="#949494"
+                    unselectedTintColor="#555"
                     tintColor="#33A3F4"
                     barTintColor="white"
-
                 >
                     <TabBar.Item
                         title="首页"
                         key="shouye"
                         icon={
-                            <div style={{
-                                width:'22px',
-                                height:'22px',
-                                background:'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat'
-                            }}></div>
+                            <svg key="5" className="icon" aria-hidden="true">
+                                <use xlinkHref="#icon-xiangyinbaoicon-5"></use>
+                            </svg>
                         }
                         selectedIcon={
-                            <div style={{
-                                width:'22px',
-                                height:'22px',
-                                background:'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat'
-                            }}></div>
+                            <svg key="9" className="icon" aria-hidden="true">
+                                <use xlinkHref="#icon-xiangyinbaoicon-9"></use>
+                            </svg>
                         }
-                        selected={this.state.selectedTab === 'newpage'}
+                        selected={this.state.selectedTab === 'index'}
                         onPress={()=>{
                             this.setState({
-                                selectedTab:'newpage'
+                                selectedTab:'index'
                             })
 
                             this.clickNav(this.props.match.url)
-                            // this.props.history.push('/newpage')
+                            // this.props.history.push('/index')
                         }}
                     >
                     </TabBar.Item>
@@ -61,18 +56,14 @@ class BottomTabBar extends Component{
                         title="医疗"
                         key="医疗"
                         icon={
-                            <div style={{
-                                width:'22px',
-                                height:'22px',
-                                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat'
-                            }}></div>
+                            <svg key="10" className="icon" aria-hidden="true">
+                                <use xlinkHref="#icon-xiangyinbaoicon-10"></use>
+                            </svg>
                         }
                         selectedIcon={
-                            <div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
-                            />
+                            <svg key="12" className="icon" aria-hidden="true">
+                                <use xlinkHref="#icon-xiangyinbaoicon-12"></use>
+                            </svg>
                         }
                         selected={this.state.selectedTab === 'medical'}
                         onPress={() => {
@@ -88,18 +79,14 @@ class BottomTabBar extends Component{
                         title="付款码"
                         key="fukuanma"
                         icon={
-                            <div style={{
-                                width:'22px',
-                                height:'22px',
-                                background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat'
-                            }}></div>
+                            <svg key="11" className="icon" aria-hidden="true">
+                                <use xlinkHref="#icon-xiangyinbaoicon-11"></use>
+                            </svg>
                         }
                         selectedIcon={
-                            <div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
-                            />
+                            <svg key="13" className="icon" aria-hidden="true">
+                                <use xlinkHref="#icon-xiangyinbaoicon-13"></use>
+                            </svg>
                         }
                         selected={this.state.selectedTab === 'paymentcode'}
                         onPress={() => {
@@ -112,8 +99,16 @@ class BottomTabBar extends Component{
                     >
                     </TabBar.Item>
                     <TabBar.Item
-                        icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-                        selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
+                        icon={
+                            <svg key="14" className="icon" aria-hidden="true">
+                                <use xlinkHref="#icon-xiangyinbaoicon-14"></use>
+                            </svg>
+                        }
+                        selectedIcon={
+                            <svg key="15" className="icon" aria-hidden="true">
+                                <use xlinkHref="#icon-xiangyinbaoicon-15"></use>
+                            </svg>
+                        }
                         title="我的"
                         key="My"
                         selected={this.state.selectedTab === 'my'}

@@ -1,27 +1,64 @@
-#My .topMenu {
+#My {
+  height: 100%;
+  background: #f3f3f3;
+  overflow: auto;
+}
+#My .topIcon {
+  height: 1.86rem;
   background: #fff;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 0.3rem;
+  text-align: center;
 }
-#My .topMenu .topMenuSao {
-  height: 2.5rem;
-  border-right: 0.01rem solid #f3f3f3 ;
+#My .topIcon .icon {
+  width: 0.70rem;
+  height: 0.70rem;
+  margin-bottom: 0.08rem;
+  color: #b5b5b5;
 }
-#My .topMenu .topMenuCode {
-  height: 2.5rem;
+#My .topIcon span {
+  font-size: 0.28rem;
+  color: #555;
 }
-#My .Menu {
-  margin-top: 0.2rem;
-}
-#My .Menu .MenuList {
+#My .navlist {
   background: #fff;
-  height: 2.05rem;
-  border-right: 0.01rem solid #f3f3f3;
+  margin-bottom: 0.3rem;
+  font-size: 0.28rem;
 }
-#My .Menu .am-flexbox .am-flexbox-item {
-  margin-left: 0;
+#My .navlist .listButton {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  margin: 0 0.34rem;
+  border-bottom: 0.01rem solid #eee;
 }
-#My .Menu .border-no-right {
+#My .navlist .listButton .icon {
+  width: 0.44rem;
+  height: 0.44rem;
+  vertical-align: middle;
+  margin-right: 0.06rem;
+}
+#My .navlist .listButton .icon2 {
+  width: 0.28rem;
+  height: 0.28rem;
+  color: #b5b5b5;
+  margin-top: 0.30rem;
+  float: right;
+  line-height: 0.88rem;
+}
+#My .navlist .listButton span {
+  line-height: 0.44rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+#My .navlist .listButton:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#My .navlist .listButton:last-child {
   border: 0;
-}
-#My .Menu .border-bottom {
-  border-bottom: 1px solid #f3f3f3;
 }
