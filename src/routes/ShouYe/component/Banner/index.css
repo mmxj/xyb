@@ -1,3 +1,7 @@
 .banner {
   height: 100%;
+  touch-action: none;
+}
+.banner .banner {
+  height: 100%;
 }

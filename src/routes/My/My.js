@@ -7,7 +7,7 @@ export default class My extends Component {
         this.goroute=this.goroute.bind(this)
     }
     goroute(url){
-        this.props.history.push('login')
+        this.props.history.push(url)
     }
     render(){
         return (
@@ -43,7 +43,7 @@ export default class My extends Component {
                     </Flex.Item>
                 </Flex>
                 <div className="navlist">
-                    <div className="listButton" onClick={()=>{this.goroute('/myaccount')}}>
+                    <div className="listButton" onClick={()=>{this.goroute('my/myaccount')}}>
                         <svg key="27" className="icon" aria-hidden="true">
                             <use xlinkHref="#icon-xiangyinbaoicon-27"></use>
                         </svg>

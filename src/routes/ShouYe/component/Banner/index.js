@@ -4,13 +4,13 @@
 import React,{Component} from 'react';
 import {Carousel} from 'antd-mobile';
 import './index.less';
-import Ajax from '../../../../services/services';
+import Ajax from '../../../../services/index';
 export default class Banner extends Component{
     constructor(prop){
         super(prop);
         this.state={
             data:[{id:'1',imageDownloadUrl:'1527565866991-广告栏图片（新）.png'}],
-            imgHeight:'3.8rem'
+            height:'3.8rem'
         }
     }
     componentDidMount(){

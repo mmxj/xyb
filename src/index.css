@@ -29,3 +29,6 @@ html{
 .am-button-primary{
   background:#29bfff;
 }
+html:not([data-scale]) .am-button-primary::before{
+  border-color:#29bfff;
+}

@@ -1,23 +1,55 @@
 import React,{Component} from 'react';
 import {InputItem,Button } from 'antd-mobile';
 import './index.less';
-export default class Login extends Component{
+import md5 from 'js-md5';
+import {removespace} from '@/unit';
+import Ajax from '@/services';
+import cookie from 'react-cookies';
+import {connect} from 'react-redux';
+import {loginStatus} from '@/redux/actions'
+class Login extends Component{
     constructor(props){
         super(props);
-        console.log(props);
+
     }
     keydown(event,account){
-        if(event.keyCode==='13'){
+       if(event.keyCode==='13'||event.keyCode===13){
             if(account){
                 this.password.focus()
             }
         }
 
     }
+    userLogin(){
+        if(this.password.state.value===''){
+            // alert('请输入密码')
+        }
+        let account=removespace(this.account.state.value);
+        let password=md5(this.password.state.value).toUpperCase();
+        let time=new Date();
+        time.setMinutes(time.getMinutes()+10);
+        Ajax(
+            {
+                router:'/user/app/login',
+                data:{
+                    deviceType:1,
+                    loginName:account,
+                    password:password,
+                },
+                callback:(data)=>{
+                    cookie.save('session',data.session,{expires:time});
+                    this.props.loginStatus(true);
+                    // this.props.history.push(this.props.hash.split('#')[1]);
+                    window.history.back()
+                }
+            }
+        )
+    }
     goroute(url){
         this.props.history.push(url)
     }
     render(){
+
         return (
             <div id="Login">
                <div className="logo">
@@ -27,16 +59,15 @@ export default class Login extends Component{
                    <p>欢迎使用乡银保</p>
                </div>
                 <div className="box-wrap">
-
                         <div className="input-wrap">
                             <InputItem
-                                type="number"
                                 placeholder="请输入手机号"
                                 clear
+                                type="phone"
                                 onKeyDown={(event)=>{
                                     this.keydown(event,'account')
                                 }}
-                                value={this.account}
+                                ref={el => this.account =el}
                             >
                                 <svg key="52" className="icon" aria-hidden="true">
                                     <use xlinkHref="#icon-xiangyinbaoicon-52"></use>
@@ -49,7 +80,6 @@ export default class Login extends Component{
                                 type="password"
                                 ref={el => this.password =el}
                                 clear
-                                value={this.passwords}
                             >
                                 <svg key="50" className="icon" aria-hidden="true">
                                     <use xlinkHref="#icon-xiangyinbaoicon-50"></use>
@@ -57,8 +87,8 @@ export default class Login extends Component{
                             </InputItem>
                         </div>
                     <div className="button-wrap clearfix">
-                        <Button type="primary" className="button">登录</Button>
-                        <span className="forget">忘记密码</span>
+                        <Button type="primary" className="button" onClick={()=>{this.userLogin()}}>登录</Button>
+                        <span className="forget" onClick={()=>{this.goroute('password')}}>忘记密码</span>
                         <span className="signin" onClick={()=>{this.goroute('signin')}}>注册</span>
                     </div>
                 </div>
@@ -67,3 +97,17 @@ export default class Login extends Component{
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        hash:state.hash,
+        status:state.loginstatus
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        loginStatus:(config) => {
+            dispatch(loginStatus(config))
+        }
+    };
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Login)

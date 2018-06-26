@@ -22,3 +22,15 @@ export const setRoute = (config) =>{
         config:config
     }
 }
+export const setHash = (config) => {
+    return {
+        type : 'SETLASTURL',
+        hash:config
+    }
+}
+export const loginStatus = (config) =>{
+    return {
+        type : 'LOGINSTATUS',
+        status:config
+    }
+}

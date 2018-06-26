@@ -8,9 +8,9 @@ import BottomTabBar from '../../common/BottomTabBar/BottomTabBar'
 import ShouYe from '../../routes/ShouYe/ShouYe'
 import './LayoutDefault.less'
 import {connect} from 'react-redux';
-import {setRoute} from '../../redux/actions'; //redux 的action方法
+import {setRoute,setHash,loginStatus} from '../../redux/actions'; //redux 的action方法
 import AutoRoute from '../../common/AutoRoute'; //配置显示的route
-
+import cookie from 'react-cookies';
 
 class LayoutDefault extends Component{
 
@@ -28,9 +28,35 @@ class LayoutDefault extends Component{
                 refresh:true,
             }
         )
+        window.addEventListener('hashchange',()=>{//监听路由变化
+            if(window.location.hash!=='#/index/password'&&window.location.hash!=='#/index/signin'&&window.location.hash!=='#/index/login'){
+                this.props.setHashs(window.location.hash);
+            }
+            console.log(this.props.status)
+            let session=cookie.load('session');
+            if(session){
+                this.props.loginStatus(true);
+            }else{
+                this.props.loginStatus(false);
+            }
 
+            if(!this.props.status){
+                if(window.location.hash!=='#/index/my'
+                    &&window.location.hash!=='#/index/medical'
+                    &&window.location.hash!=='#/index'
+                    &&window.location.hash!=='#/index/signin'
+                    &&window.location.hash!=='#/index/password'
+                ){
+                    if(!this.props.status){
+                        this.props.history.push('/index/login')
+                    }
+                }
+            }
+            // console.log(this.props.status)
+        })
     }
     componentDidMount() {
+
     }
     componentDidUpdate() {
 
@@ -39,7 +65,13 @@ class LayoutDefault extends Component{
 
     }
     goback(){
-        window.history.back()
+        if(window.location.hash==="#/index/login" ||window.location.hash=='#/index/signin'
+            ||window.location.hash=='#/index/password'){
+            window.history.go(-2)
+        }else{
+            window.history.back()
+        }
+
     }
     render(){
         return (
@@ -83,12 +115,20 @@ const mapStateToProps = (state) => {
     return {
         title:state.changeTitle,
         routelist:state.routelist,
+        hash:state.hash,
+        status:state.loginstatus
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
         routeconfig:(config) =>{
             dispatch(setRoute(config))
+        },
+        setHashs:(config) =>{
+            dispatch(setHash(config))
+        },
+        loginStatus:(config) =>{
+            dispatch(loginStatus(config))
         }
     };
 }

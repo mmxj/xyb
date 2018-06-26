@@ -2,6 +2,7 @@
  * Created by 银信数据科技 on 2018/6/22.
  */
 import ShouYe from '@/routes/ShouYe/ShouYe' //引入跳转模块 //首页
+
 import MoreArticle from '@/routes/ShouYe/subpage/MoreArticle' //引入子页面 //更多文章
 
 import Medical from '@/routes/Medical/Medical' //医疗
@@ -12,7 +13,11 @@ import My from '@/routes/My/My' // 我的
 
 import Login from '@/routes/Login/Login' //登录页
 
-import SignIn from '@/routes/Login/SignIn'
+import SignUp from '@/routes/Login/SignUp'//注册页
+
+import Password from '@/routes/Login/Password' //忘记密码
+
+import MyAccount from '@/routes/My/MyAccount' //我的账号
 
 export default  function routesmessage(pathname){ //设置route页面地方
     /*
@@ -40,12 +45,15 @@ export default  function routesmessage(pathname){ //设置route页面地方
         case '/index/my': // 我的
             return {path: pathname, component: My, exact: true, refresh: false , title : '我的',showFooter:true,back:false}
 
-        case '/index/login': // 我的
+        case '/index/login': // 登录
             return {path: pathname, component: Login, exact: true, refresh: false , title : '登录',showFooter:false,back:true}
 
-        case '/index/signin': // 我的
-            return {path: pathname, component: SignIn, exact: true, refresh: false , title : '注册',showFooter:false,back:true}
-
+        case '/index/signin': // 注册
+            return {path: pathname, component: SignUp, exact: true, refresh: false , title : '注册',showFooter:false,back:true}
+        case '/index/password': // 重置密码
+            return {path: pathname, component: Password, exact: true, refresh: false , title : '忘记密码',showFooter:false,back:true}
+        case '/index/my/myaccount': // 重置密码
+            return {path: pathname, component: MyAccount, exact: true, refresh: false , title : '我的账户',showFooter:false,back:true}
         default :
             return 404
     }

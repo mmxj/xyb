@@ -2,10 +2,14 @@
  * Created by 银信数据科技 on 2018/6/19.
  */
 import {combineReducers} from 'redux';
-import changeTitle from './changeTitle'
-import routelist from './routelist'
+import changeTitle from './changeTitle';
+import routelist from './routelist';
+import hash from './hash.js';
+import loginstatus from './loginstatus'
 
 export default combineReducers({
     changeTitle,
-    routelist
+    hash,
+    routelist,
+    loginstatus
 })

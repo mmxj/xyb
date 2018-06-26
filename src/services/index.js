@@ -14,13 +14,13 @@
 import axios from 'axios';
 import md5 from 'js-md5';
 import {Toast} from 'antd-mobile';
-
+import errorAlert from './errorAlert';
+import cookie from 'react-cookies';
 let loading ={
         toast:Toast,
         show:true
     };
 const Ajax = (opt)=>{
-
         let setting={//外部传进来的参数http://192.168.0.104
             // openUrl : "http://onlinepay.site:8091",//设置测试环境请求的域名
             openUrl: "http://www.yxunionpay.com:8091",//设置生产环境请求的域名
@@ -34,6 +34,13 @@ const Ajax = (opt)=>{
             }
         }
         //
+        let session=cookie.load('session');
+        if(opt.session){
+            if(!session){
+                window.location.href=window.location.origin+'/#/index/login';
+                return
+            }
+        }
         // let tempSignature = "";//计算后返回的signature 算法在下面makeSignature中
         let version ="1.0.0"; //版本号 默认是1.0.0
         let key = "qazwsxedc";//参数密匙
@@ -44,6 +51,7 @@ const Ajax = (opt)=>{
         let makeSignature=(session, biz_content) => {
             let md5Content = md5(biz_content).toUpperCase();
             let signature=null;
+
             if(!session){
                 signature ="appid="+setting.appid +"&biz_content="+md5Content + "&nonce="+ nonce +"&timestamp=" + timestamp + "&version=" + version + "&key=" + key;
             } else{
@@ -79,7 +87,7 @@ const Ajax = (opt)=>{
             if(data.ret.errorCode===0){
                 opt.callback(data);
             }else{
-                alert('请求错误'+data.ret.errorMessage);
+                errorAlert(data)
             }
             loading.toast.hide();
             loading.show=true
@@ -89,6 +97,5 @@ const Ajax = (opt)=>{
             console.log(res,'请求错误');
 
         })
-
     }
 export default Ajax;

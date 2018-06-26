@@ -3,7 +3,7 @@
  */
 import React,{Component} from 'react';
 import './index.less';
-import Ajax from '../../../../services/services';
+import Ajax from '../../../../services/index';
 export default class Article extends Component{
     constructor(prop){
         super(prop);
@@ -22,7 +22,8 @@ export default class Article extends Component{
                 enableFlag:1
             },
             callback:(data)=>{
-                this.setState({data:data.rows})
+                this.setState({data:data.rows});
+
             }
         })
     }

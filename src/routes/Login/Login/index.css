@@ -20,6 +20,7 @@
 }
 #Login input {
   height: 1rem;
+  touch-action: none;
 }
 #Login .box-wrap {
   padding: 0 0.50rem;
