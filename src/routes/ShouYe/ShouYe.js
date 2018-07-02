@@ -5,6 +5,7 @@ import React,{Component} from 'react';
 import {Flex,WhiteSpace,Icon} from 'antd-mobile';
 import './ShouYe.less';
 import Banner from './component/Banner';
+import cookie from 'react-cookies';
 import Article from './component/Article';
 import {connect} from 'react-redux';
 const shouyeLogo = require('../../assets/img/daidingdingdan.png');
@@ -40,7 +41,7 @@ class ShouYe extends Component {
                 <div className="flex-container">
                     <Flex
                         justify="center">
-                        <Flex.Item>
+                        <Flex.Item onClick={()=>{cookie.save('payStatus',1);this.props.history.push('/index/my/myorder')}}>
                             <div className="tag border-r">
                                 <img src={shouyeLogo} alt="" className="menu" />
                                 <br/>
@@ -70,7 +71,7 @@ class ShouYe extends Component {
                         <span className="articeMore" onClick={()=>{this.goRoute('/moreartice')}} ><b className="articeMoreText">更多</b> <Icon className="articeIcon" size="sm" type="right"/></span>
                     </div>
                     <div className="articelistWrap">
-                        <Article/>
+                        <Article history={this.props.history}/>
                     </div>
                 </div>
             </div>

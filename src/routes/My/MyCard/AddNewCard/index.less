@@ -1,0 +1,104 @@
+#AddNewCard{
+  background: #f3f3f3;
+  box-sizing: border-box;
+  height:e("calc(100% )");
+  .title{
+    font-size:0.24rem;
+    color: #bbb;
+    padding:0.2rem;
+    box-sizing: border-box;
+    letter-spacing: 0.02rem;
+  }
+  .form{
+    background:#fff;
+    padding:0 0.2rem;
+    .list{
+      line-height: 1rem;
+      font-size: 0.28rem;
+      box-sizing: border-box;
+      border-bottom: 1px solid #eee;
+      span{
+        width:2.1rem;
+        display: inline-block;
+        font-size: 0.28rem;
+        font-weight: bold;
+        font-family: "PingFang SC";
+      }
+      input{
+        display: inline-block;
+        width:e("calc(100% - 2.1rem)");
+        box-sizing: border-box;
+        height:1rem;
+        border:0;
+        color: #999;
+      }
+      .code{
+        width:e("calc(100% - 4.1rem)");
+      }
+      .getcode{
+        width:2rem;
+        display: inline-block;
+        box-sizing: border-box;
+        font-size:0.28rem;
+        vertical-align: middle;
+        height:0.7rem;
+        line-height: 0.7rem;
+        span{
+          font-weight: 400;
+        }
+      }
+      ::-webkit-input-placeholder { /* WebKit browsers */
+        color:    #999;
+      }
+      :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:    #999;
+      }
+      ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:    #999;
+      }
+      :-ms-input-placeholder { /* Internet Explorer 10+ */
+        color:    #999;
+      }
+      .List-wrap{
+        .am-list-arrow{
+          position: absolute;
+          right:0.2rem;
+        }
+        .am-list-extra{
+          font-size:0.28rem;
+        }
+        display: inline-block;
+        width:e('calc(100% - 2.1rem)');
+        text-align: left;
+        padding:0;
+        height:100%;
+        border:0;
+        .am-list-body:before{
+          border:0;
+          height:0;
+        }
+        .am-list-body:after{
+          border:0;
+          height:0;
+        }
+        .am-list-item am-list-item-middle{
+          padding:0;
+        }
+        .am-list-item{
+          padding:0;
+        }
+        .am-list-extra{
+          text-align: left;
+        }
+      }
+    }
+    .list:last-child{
+      border:0;
+    }
+
+  }
+  .submit{
+    margin-top:0.42rem;
+    padding:0 0.2rem;
+  }
+}

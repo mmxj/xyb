@@ -17,6 +17,15 @@ class BottomTabBar extends Component{
             this.props.history.push(url)
         }
     }
+    componentDidMount(){
+        window.addEventListener('hashchange',()=>{//监听路由变化
+                if(window.location.hash==="#/index/paymentcode"){
+                        this.setState({
+                            selectedTab:'paymentcode'
+                        })
+                }
+             })
+    }
     render(){
         return (
             <div

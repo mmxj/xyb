@@ -5,11 +5,12 @@ import React,{Component} from 'react';
 import './index.less';
 import Ajax from '../../../../services/index';
 export default class Article extends Component{
-    constructor(prop){
-        super(prop);
+    constructor(props){
+        super(props);
         this.state={
             data:[]
         }
+
     }
     componentDidMount(){
         Ajax({
@@ -30,11 +31,14 @@ export default class Article extends Component{
     createTime(time){
         return time.split('.')[0];
     }
+    go=(val)=>{
+        this.props.history.push({pathname:'/index/article',state:val})
+    }
     render () {
         return (
             <div id="articelistWrap">
                 {this.state.data.map(val => (
-                    <div className="articelist" key={val.id}>
+                    <div className="articelist" key={val.id} onClick={()=>{this.go(val)}}>
                         <div className="list-title">
 
                             <div className="list-title-content" style={{overflow:'hidden',textOverflow:'ellipsis',display:'-webkit-box','WebkitBoxOrient':'vertical','WebkitLineClamp':2}}>

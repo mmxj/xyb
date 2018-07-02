@@ -1,0 +1,68 @@
+#MyOrder {
+  overflow: auto;
+  color: #333;
+  min-height: calc(13.34rem - 0.88rem);
+}
+#MyOrder .list-wrap {
+  padding: 0.2rem 0.2rem 0;
+}
+#MyOrder .list-wrap .list {
+  background: #fff;
+  padding: 0.4rem 0.3rem 0.3rem ;
+  -webkit-border-radius: 0.1rem;
+  -moz-border-radius: 0.1rem;
+  border-radius: 0.1rem;
+}
+#MyOrder .list-wrap .list .name {
+  font-size: 0.32rem;
+  font-weight: 600;
+  display: inline-block;
+  width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+#MyOrder .list-wrap .list .money {
+  float: right;
+  font-size: 0.32rem;
+  font-weight: 600;
+  width: 20%;
+}
+#MyOrder .list-wrap .list .list-top {
+  margin-bottom: 0.2rem;
+}
+#MyOrder .list-wrap .list .time {
+  font-size: 0.28rem;
+  color: #a7a7a7;
+  padding: 0.1rem  0;
+  display: inline-block;
+}
+#MyOrder .list-wrap .list .list-button {
+  background: #ff4e2c;
+  color: #fff;
+  font-size: 0.3rem;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.08rem;
+  float: right;
+}
+#MyOrder .list-wrap .list .buttonsuccss {
+  background: #27baff;
+}
+#MyOrder .list-wrap .list .defeated {
+  background: #bbb;
+}
+#MyOrder .loading {
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  height: 0.88rem;
+  line-height: 0.88rem;
+}
+#MyOrder .loading .loading-icon {
+  position: relative;
+  top: 0.05rem;
+  margin-left: 0.1rem;
+  width: 0.36rem;
+  height: 0.36rem;
+}

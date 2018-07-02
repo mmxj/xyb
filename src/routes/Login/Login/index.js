@@ -10,7 +10,7 @@ import {loginStatus} from '@/redux/actions'
 class Login extends Component{
     constructor(props){
         super(props);
-
+        this.keydown=this.keydown.bind(this)
     }
     keydown(event,account){
        if(event.keyCode==='13'||event.keyCode===13){
@@ -27,7 +27,7 @@ class Login extends Component{
         let account=removespace(this.account.state.value);
         let password=md5(this.password.state.value).toUpperCase();
         let time=new Date();
-        time.setMinutes(time.getMinutes()+10);
+        time.setMinutes(time.getMinutes()+1000);
         Ajax(
             {
                 router:'/user/app/login',
@@ -38,6 +38,8 @@ class Login extends Component{
                 },
                 callback:(data)=>{
                     cookie.save('session',data.session,{expires:time});
+                    cookie.save('userId',data.userId,{expires:time});
+                    cookie.save('userName',data.userName,{expires:time});
                     this.props.loginStatus(true);
                     // this.props.history.push(this.props.hash.split('#')[1]);
                     window.history.back()
@@ -63,11 +65,13 @@ class Login extends Component{
                             <InputItem
                                 placeholder="请输入手机号"
                                 clear
-                                type="phone"
+                                type="number"
                                 onKeyDown={(event)=>{
                                     this.keydown(event,'account')
                                 }}
                                 ref={el => this.account =el}
+                                maxLength={11}
+                                onTouchStart={()=>{return false}}
                             >
                                 <svg key="52" className="icon" aria-hidden="true">
                                     <use xlinkHref="#icon-xiangyinbaoicon-52"></use>
@@ -80,6 +84,7 @@ class Login extends Component{
                                 type="password"
                                 ref={el => this.password =el}
                                 clear
+                                onTouchStart={()=>{return false}}
                             >
                                 <svg key="50" className="icon" aria-hidden="true">
                                     <use xlinkHref="#icon-xiangyinbaoicon-50"></use>

@@ -2,11 +2,12 @@
  * Created by 银信数据科技 on 2018/6/22.
  */
 import React,{Component} from 'react';
-import {InputItem,Button} from 'antd-mobile';
+import {InputItem,Button,Modal} from 'antd-mobile';
 import './index.less'
 import {removespace} from '@/unit';
 import Ajax from '@/services';
 import md5 from 'js-md5'
+const alert=Modal.alert;
 export default class Password extends Component{
     constructor(props){
         super(props)
@@ -28,7 +29,7 @@ export default class Password extends Component{
                 this.setState({
                     sendsms:false
                 })
-                var timer=5;
+                var timer=60;
                 this.setState({
                     buttonConnent:timer+'秒之后再试',
                     sendclass:"no-use",
@@ -81,12 +82,15 @@ export default class Password extends Component{
         let validateCode=this.validateCode.state.value;
         if(phone===null||phone===''){
             alert('请填写手机号')
+            return
         }
         if(password===null||password===''){
             alert('请填写密码')
+            return
         }
         if(validateCode===null||validateCode===''){
             alert('请填写验证码')
+            return
         }
         if(password===passwordagain){
             Ajax({
@@ -100,13 +104,15 @@ export default class Password extends Component{
                 },
                 callback:(data)=>{
                     if(data.ret.errorCode===0){
-                        alert('密码修改成功');
-                        this.props.history.back();
+                        alert('账号新建成功','',[{
+                            text:'确定',onPress:()=> window.history.back()
+                        }]);
                     }
                 }
             })
         }else{
             alert('两次输入的密码不一致')
+            return
         }
 
     }
@@ -116,10 +122,12 @@ export default class Password extends Component{
                 <div className="box-wrap">
                     <div className="input-wrap">
                         <InputItem
-                            type="phone"
+                            type="number"
                             placeholder="请输入手机号"
                             clear
+                            maxLength={11}
                             ref={el => this.phone =el}
+                            onTouchStart={()=>{return false}}
                         >
                             <svg key="52" className="icon" aria-hidden="true">
                                 <use xlinkHref="#icon-xiangyinbaoicon-52"></use>
@@ -132,6 +140,7 @@ export default class Password extends Component{
                             placeholder="请输入验证码"
                             clear
                             ref={el => this.validateCode =el}
+                            onTouchStart={()=>{return false}}
                         >
                             <svg key="51" className="icon" aria-hidden="true">
                                 <use xlinkHref="#icon-xiangyinbaoicon-51"></use>
@@ -160,6 +169,7 @@ export default class Password extends Component{
                             placeholder="请输入6~16位字母或数字的密码"
                             clear
                             ref={el => this.passwordagain =el}
+                            onTouchStart={()=>{return false}}
                         >
                             <svg key="50" className="icon" aria-hidden="true">
                                 <use xlinkHref="#icon-xiangyinbaoicon-50"></use>

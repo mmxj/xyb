@@ -1,0 +1,51 @@
+#MoreArticle{
+  height:100%;
+  .articelist{
+    background: #fff;
+    padding:0.2rem 0.22rem 0.2rem 0.32rem;
+
+    .list-title{
+      display: inline-block;
+      width:calc(~"100% - 2rem");
+      vertical-align: top;
+      .list-title-content{
+        overflow:hidden;
+        text-overflow:ellipsis;
+        display:-webkit-box;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:2;
+      }
+      .articeBeginTime{
+        display: inline-block;
+        font-size:0.24rem;
+        color: #999;
+      }
+      margin-right:0.2rem;
+    }
+    .list-img{
+      display: inline-block;
+      height:1.2rem;
+      width: 1.8rem;
+      vertical-align: middle;
+      img{
+        width:100%;
+        height:100%;
+      }
+    }
+    margin-bottom:0.1rem;
+  }
+  .loading{
+    width:100%;
+    text-align: center;
+    vertical-align: middle;
+    height:0.88rem;
+    line-height: 0.88rem;
+    .loading-icon{
+      position: relative;
+      top:0.05rem;
+      margin-left:0.1rem;
+      width:0.36rem;
+      height:0.36rem;
+    }
+  }
+}

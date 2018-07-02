@@ -32,7 +32,6 @@ class LayoutDefault extends Component{
             if(window.location.hash!=='#/index/password'&&window.location.hash!=='#/index/signin'&&window.location.hash!=='#/index/login'){
                 this.props.setHashs(window.location.hash);
             }
-            console.log(this.props.status)
             let session=cookie.load('session');
             if(session){
                 this.props.loginStatus(true);
@@ -46,8 +45,11 @@ class LayoutDefault extends Component{
                     &&window.location.hash!=='#/index'
                     &&window.location.hash!=='#/index/signin'
                     &&window.location.hash!=='#/index/password'
+                    &&window.location.hash!=='#/index/moreartice'
+                    &&window.location.hash!=='#/index/article'
+                    &&window.location.hash!=='#/index/my/mysetting'
                 ){
-                    if(!this.props.status){
+                    if(!this.props.status&&window.location.hash!=='#/index/login'){
                         this.props.history.push('/index/login')
                     }
                 }
@@ -65,8 +67,8 @@ class LayoutDefault extends Component{
 
     }
     goback(){
-        if(window.location.hash==="#/index/login" ||window.location.hash=='#/index/signin'
-            ||window.location.hash=='#/index/password'){
+        if(window.location.hash==="#/index/login" ||window.location.hash==='#/index/signin'
+            ||window.location.hash==='#/index/password'){
             window.history.go(-2)
         }else{
             window.history.back()
@@ -75,23 +77,27 @@ class LayoutDefault extends Component{
     }
     render(){
         return (
-            <div id="LayoutDefault">
+            <div id="LayoutDefault" className={this.props.routelist.showFooter?"paddingBottom":''}>
                 <NavBar
                     className="navBar"
                     mode="dark"
                     icon={
                         this.props.routelist.back?
-                            <span style={{width:'0.88rem',height:'0.88rem',display:'inline-block',position:'relative'}} onClick={this.goback}>
+                            <span style={{width:'0.88rem',height:'0.88rem',display:'inline-block',position:'relative'}} onClick={()=>{this.goback()}}>
                                 <svg className="icon" aria-hidden="true" style={{width:'0.36rem',height:'0.36rem',position:'absolute',top:'50%',marginTop:'-0.16rem'}}>
                                     <use xlinkHref="#icon-xiangyinbaoicon-3"></use>
                                 </svg>
                             </span> :""
                     }
-                    //  rightContent={[
-                    //      <svg key="0" className="icon rightShao" aria-hidden="true">
-                    //          <use xlinkHref="#icon-xiangyinbaoicon-11"></use>
-                    //      </svg>,
-                    // ]}
+                      rightContent={[
+                          this.props.routelist.rightsubmit?<div key="0" onClick={()=>{this.props.submit()}}>保存</div>:'',
+                          this.props.routelist.cardAdd?<span  key="1" style={{width:'0.88rem',height:'0.88rem',display:'inline-block',position:'relative',textAlign:'right'}} onClick={()=>{this.props.submit()}}>
+                                <svg className="icon" aria-hidden="true" style={{width:'0.36rem',height:'0.36rem',position:'absolute',top:'50%',marginTop:'-0.16rem',right:0}}>
+                                    <use xlinkHref="#icon-xiangyinbaoicon-56"></use></svg></span> :'',
+                          this.props.routelist.rebutton?<span  key="1" style={{width:'0.88rem',height:'0.88rem',display:'inline-block',position:'relative',textAlign:'right'}} onClick={()=>{this.props.submit()}}>
+                                <svg className="icon" aria-hidden="true" style={{width:'0.36rem',height:'0.36rem',position:'absolute',top:'50%',marginTop:'-0.16rem',right:0}}>
+                                    <use xlinkHref="#icon-xiangyinbaoicon-57"></use></svg></span> :'',
+                      ]}
                 >
                     {this.props.title.title}
                 </NavBar>
@@ -116,7 +122,8 @@ const mapStateToProps = (state) => {
         title:state.changeTitle,
         routelist:state.routelist,
         hash:state.hash,
-        status:state.loginstatus
+        status:state.loginstatus,
+        submit:state.submitButton
     }
 }
 const mapDispatchToProps = (dispatch) => {

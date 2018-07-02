@@ -6,6 +6,7 @@ import {Route} from 'react-router-dom';
 import {PullToRefresh} from 'antd-mobile';
 import {connect} from 'react-redux';
 import {setRoute,changeTitle} from '@/redux/actions';
+
 import routesmessage from './routesmessage'
 
 
@@ -42,6 +43,13 @@ class AutoRoute extends Component{
             setTimeout(() => this.setState({cc: a,}), 0);
         }
     }
+    ptrOnScroll(){
+
+        // console.log(ReactDOM.findDOMNode(this.ptr).scrollTop)
+
+        this.props.downRefre(this.ptr)
+
+    }
     render(){
 
         return (
@@ -59,11 +67,13 @@ class AutoRoute extends Component{
                         direction="down"
                         refreshing={false}
                         onRefresh={() => {
-                            console.log('刷新')
-                            if(this.props.onRefresh){
-                                this.props.onRefresh();//刷新的回调函数
-                            }
+                            // console.log('刷新')
+                            this.props.onRefre()
+                            // if(this.props.onRefresh){
+                            //     this.props.onRefresh();//刷新的回调函数
+                            // }
                         }}
+                        onScroll={()=>{this.ptrOnScroll()}}
                     >
                         <Route path={this.props.path} component={this.props.component} exact={this.props.exact}/>
                     </PullToRefresh>
@@ -77,6 +87,8 @@ class AutoRoute extends Component{
 const mapStateToProps = (state)=>{
     return {
         routelist:state.routelist,
+        onRefre:state.submitButton,
+        downRefre:state.downRefre
     }
 }
 const mapDispatchToProps = (dispatch)=>{

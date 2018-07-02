@@ -1,6 +1,5 @@
 #LayoutDefault {
   padding-top: 0.88rem;
-  padding-bottom: 0.98rem;
   box-sizing: border-box;
   height: 100%;
 }
@@ -33,4 +32,7 @@
 #LayoutDefault .rightShao {
   width: 0.44rem;
   height: 0.44rem;
+}
+.paddingBottom {
+  padding-bottom: 0.98rem;
 }

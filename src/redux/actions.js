@@ -34,3 +34,15 @@ export const loginStatus = (config) =>{
         status:config
     }
 }
+export const submitButton = (config) => {
+    return {
+        type:'SUBMIT',
+        fn:config
+    }
+}
+export const downRefre = ( config) =>{
+    return {
+        type:'DOWNREFRE',
+        fn:config
+    }
+}

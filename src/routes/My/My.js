@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {Flex} from 'antd-mobile';
+import cookie from 'react-cookies'
 import './My.less';
 export default class My extends Component {
     constructor(props){
@@ -20,21 +21,21 @@ export default class My extends Component {
                         <br/>
                         <span>扫一扫</span>
                     </Flex.Item>
-                    <Flex.Item>
+                    <Flex.Item onClick={()=>{this.props.history.push('/index/paymentcode')}}>
                         <svg key="46" className="icon" aria-hidden="true">
                             <use xlinkHref="#icon-xiangyinbaoicon-46"></use>
                         </svg>
                         <br/>
                         <span>付款码</span>
                     </Flex.Item>
-                    <Flex.Item>
-                        <svg key="47" className="icon" aria-hidden="true">
+                    <Flex.Item onClick={()=>{cookie.remove('payStatus');this.props.history.push('my/myorder')}}>
+                        <svg key="47" className="icon" aria-hidden="true" >
                             <use xlinkHref="#icon-xiangyinbaoicon-47"></use>
                         </svg>
                         <br/>
                         <span>我的订单</span>
                     </Flex.Item>
-                    <Flex.Item>
+                    <Flex.Item onClick={()=>{this.goroute('my/mycard')}}>
                         <svg key="45" className="icon" aria-hidden="true">
                             <use xlinkHref="#icon-xiangyinbaoicon-45"></use>
                         </svg>
@@ -100,8 +101,8 @@ export default class My extends Component {
                         </svg>
                     </div>
                 </div>
-                <div className="navlist">
-                    <div className="listButton">
+                <div className="navlist" >
+                    <div className="listButton"  onClick={()=>{this.goroute('my/mysetting')}}>
                         <svg key="31" className="icon" aria-hidden="true">
                             <use xlinkHref="#icon-xiangyinbaoicon-31"></use>
                         </svg>

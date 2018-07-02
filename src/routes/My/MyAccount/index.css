@@ -1,0 +1,30 @@
+#MyAccount {
+  background: #f3f3f3;
+  padding-top: 0.3rem;
+  box-sizing: border-box;
+  height: calc(100%);
+}
+#MyAccount .box-wrap {
+  padding: 0 0.4rem;
+  background: #fff;
+}
+#MyAccount .box-wrap .list {
+  border-bottom: 1px solid #eee;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  font-size: 0.28rem;
+}
+#MyAccount .box-wrap .list:last-child {
+  border-bottom: 0;
+}
+#MyAccount .box-wrap .text-right {
+  color: #a7a7a7;
+  float: right;
+}
+#MyAccount .box-wrap .text-right .icon {
+  height: 0.28rem;
+  margin-left: 0.10rem;
+}
+#MyAccount .box-wrap .mobile {
+  padding-right: 0.36rem;
+}

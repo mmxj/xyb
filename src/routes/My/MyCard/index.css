@@ -1,0 +1,64 @@
+#MyCard {
+  background: #fff;
+  box-sizing: border-box;
+  height: calc(100% );
+  padding: 0.2rem;
+  color: #fff;
+}
+#MyCard .list {
+  overflow: hidden;
+  height: 1.68rem;
+  margin-bottom: 0.1rem;
+  -webkit-border-radius: 0.1rem;
+  -moz-border-radius: 0.1rem;
+  border-radius: 0.1rem;
+  border: 0;
+  position: relative;
+}
+#MyCard .list .backBg {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  right: -0.5rem;
+  top: 50%;
+  margin-top: -1.5rem;
+  z-index: 1;
+}
+#MyCard .list .name {
+  font-size: 0.3rem;
+  line-height: 0.58rem;
+  height: 0.58rem;
+  position: relative;
+  z-index: 3;
+  margin: 0.2rem 0 0 0.2rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+#MyCard .list .name .backlogo {
+  padding: 0;
+  margin: 0;
+  width: 0.58rem;
+  position: relative;
+  top: -0.02rem;
+  height: 0.58rem;
+  margin-right: 0.1rem;
+  vertical-align: middle;
+}
+#MyCard .socialCard {
+  background: #64c3eb;
+}
+#MyCard .socialactive {
+  background: #4ab2dd;
+}
+#MyCard .bankCard {
+  background: #d33837;
+}
+#MyCard .bankactive {
+  background: #cb2b29;
+}
+#MyCard .cardType {
+  position: absolute;
+  right: 0.2rem;
+  bottom: 0.2rem;
+  font-size: 0.24rem;
+}

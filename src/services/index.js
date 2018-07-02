@@ -16,6 +16,7 @@ import md5 from 'js-md5';
 import {Toast} from 'antd-mobile';
 import errorAlert from './errorAlert';
 import cookie from 'react-cookies';
+
 let loading ={
         toast:Toast,
         show:true
@@ -66,12 +67,13 @@ const Ajax = (opt)=>{
         }
         // extend(this.setting,opt);
         // 将this.setting.data转为字符串 post要求
+
         let data=JSON.stringify(setting.data);
         if(!setting.session){
             url=setting.openUrl+setting.router+"?appid=" +setting.appid + "&version=" + version + "&nonce=" + nonce + "&timestamp=" + timestamp + "&signature=" +makeSignature("", data);
         }else{
-            url=setting.openUrl+setting.router+"?appid=" +setting.appid + "&version=" + version + "&nonce=" + nonce + "&session="+ setting.session +"&timestamp=" +
-                timestamp + "&signature=" + makeSignature(setting.session, data);
+            url=setting.openUrl+setting.router+"?appid=" +setting.appid + "&version=" + version + "&nonce=" + nonce + "&session="+session +"&timestamp=" +
+                timestamp + "&signature=" + makeSignature(session, data);
         }
         /*
          *contentType设置请求头

@@ -1,0 +1,30 @@
+#EmailUpdate {
+  background: #f3f3f3;
+  padding-top: 0.3rem;
+  box-sizing: border-box;
+  height: calc(100% );
+}
+#EmailUpdate .box-wrap {
+  padding: 0 0.4rem;
+  background: #fff;
+}
+#EmailUpdate .box-wrap .list {
+  border-bottom: 1px solid #eee;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  font-size: 0.28rem;
+}
+#EmailUpdate .box-wrap .list:last-child {
+  border-bottom: 0;
+}
+#EmailUpdate .box-wrap .text-right {
+  color: #a7a7a7;
+  float: right;
+  height: 0.88rem;
+  width: 5.5rem;
+  box-sizing: border-box;
+  border: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

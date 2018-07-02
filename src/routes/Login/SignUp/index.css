@@ -1,7 +1,7 @@
 #SignIn {
   padding-top: 0.8rem;
   box-sizing: border-box;
-  height: calc(100% + 0.98rem);
+  height: calc(100% );
   background: #fff;
   overflow: auto;
 }

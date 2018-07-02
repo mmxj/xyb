@@ -1,3 +1,5 @@
+import {Modal} from 'antd-mobile';
+const alert=Modal.alert;
 export default function(text){
     if(text.ret){
         let message=text.ret.errorMessage;
@@ -14,6 +16,9 @@ export default function(text){
                 break;
             case "ValidateCode error":
                 alert('验证码错误')
+                break;
+            case "already exists":
+                alert('该用户已经注册')
                 break;
 
             default :

@@ -15,9 +15,14 @@
   display: inline-block;
 }
 #PaymentCode .changeCard .icon {
-  width: 0.4rem;
-  padding: 0 0.2rem;
+  width: 0.58rem;
+  padding: 0 0 0 0.2rem;
   vertical-align: middle;
+  height: 100%;
+}
+#PaymentCode .changeCard .icon img {
+  position: relative;
+  top: 0.16rem;
 }
 #PaymentCode .changeCard img {
   display: block;
@@ -30,6 +35,7 @@
 }
 #PaymentCode .payCode {
   margin-top: 0.2rem;
+  position: relative;
   width: 100%;
   height: 9.2rem;
   background: #fff;
@@ -39,12 +45,46 @@
 }
 #PaymentCode .payCode .stripCode {
   height: 2.5rem;
+  box-sizing: border-box;
+  padding-top: 0.3rem;
+  text-align: center;
+}
+#PaymentCode .payCode .stripCode img {
+  width: 6.2rem;
+  height: 1.5rem;
+}
+#PaymentCode .payCode .stripCode span {
+  letter-spacing: 0.02rem;
+  font-size: 0.28rem;
+  color: #555;
+  position: relative;
+  top: -0.1rem;
 }
 #PaymentCode .payCode .codeBorder {
   border-top: 0.04rem  #f3f3f3 dashed;
 }
 #PaymentCode .payCode .codeBorder {
   position: relative;
+}
+#PaymentCode .payCode .qrcode {
+  width: 4.1rem;
+  height: 4.1rem;
+}
+#PaymentCode .payCode .qrcode-wrap {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  margin-top: -1.25rem;
+}
+#PaymentCode .payCode .qrcode-wrap .qrcode-text {
+  font-size: 0.24rem;
+  margin-top: 0.36rem;
+  color: #999;
+}
+#PaymentCode .payCode .qrcode-wrap .qrcode-text .icon {
+  width: 0.3rem;
+  margin-right: 0.08rem;
 }
 #PaymentCode .payCode .semicircleL {
   position: absolute;
@@ -59,4 +99,59 @@
   top: -0.4rem;
   width: 0.4rem;
   height: 0.8rem;
+}
+.payCodepopup .title {
+  height: 1.20rem;
+  line-height: 1.20rem;
+  font-weight: 500;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 0.36rem;
+  color: #333;
+  position: relative;
+}
+.payCodepopup .title .close {
+  position: absolute;
+  right: 0.3rem;
+  color: #a7a7a7;
+  height: 100%;
+  line-height: 1.2rem;
+  width: 0.54rem;
+}
+.payCodepopup .cardlist {
+  padding: 0 0.4rem;
+  max-height: 4.56rem;
+  overflow: auto;
+}
+.payCodepopup .cardlist .list {
+  color: #333;
+  height: 1.14rem;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.28rem;
+  text-align: left;
+  line-height: 1.14rem;
+}
+.payCodepopup .cardlist .list span {
+  display: inline-block;
+  height: 100%;
+}
+.payCodepopup .cardlist .list .cardtype {
+  margin-right: 0.4rem;
+  float: right;
+  color: #999;
+  font-size: 0.26rem;
+}
+.payCodepopup .cardlist .list .backlogo {
+  width: 0.58rem;
+  height: 0.58rem;
+  margin-right: 0.1rem;
+  position: relative;
+  top: 0.16rem;
+}
+.payCodepopup .cardlist .list:last-child {
+  border: 0;
+}
+.payCodepopup #barcode {
+  border: 0;
 }
