@@ -82,7 +82,7 @@ export default class My extends Component {
                             <use xlinkHref="#icon-xiangyinbaoicon-2"></use>
                         </svg>
                     </div>
-                    <div className="listButton">
+                    <div className="listButton" onClick={()=>{this.goroute('my/faq')}}>
                         <svg key="29" className="icon" aria-hidden="true">
                             <use xlinkHref="#icon-xiangyinbaoicon-29"></use>
                         </svg>
@@ -91,7 +91,7 @@ export default class My extends Component {
                             <use xlinkHref="#icon-xiangyinbaoicon-2"></use>
                         </svg>
                     </div>
-                    <div className="listButton">
+                    <div className="listButton" onClick={()=>{this.goroute('my/myabout')}}>
                         <svg key="0" className="icon" aria-hidden="true">
                             <use xlinkHref="#icon-xiangyinbaoicon-32"></use>
                         </svg>

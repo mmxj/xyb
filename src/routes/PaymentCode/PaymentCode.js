@@ -27,7 +27,7 @@ class PaymentCode extends Component {
         this.countDown=1
         this.timer=setInterval(()=>{
             if(this.countDown>=60){
-                this. getQrCode();
+                this.getQrCode();
                 this.countDown=1;
             }
             this.countDown++;
@@ -142,7 +142,7 @@ class PaymentCode extends Component {
                     </div> }
                 <div className="payCode">
                     <div className="stripCode">
-                        <img id="barcode" ref={el=>this.barcode=el}></img>
+                        <img id="barcode" ref={el=>this.barcode=el} alt="条形码" />
                         <span>{this.state.qrcode}</span>
                     </div>
                     <div className="codeBorder">

@@ -5,7 +5,8 @@ import React,{Component} from 'react';
 import {Button,Modal,Icon} from 'antd-mobile';
 import cookie from 'react-cookies';
 import Ajax from '@/services';
-
+import JsBarcode from 'jsbarcode';
+import {dateformat} from '@/unit'
 import './index.less'
 export default class OrderDetails extends Component{
     constructor(props){
@@ -13,20 +14,43 @@ export default class OrderDetails extends Component{
         this.state={
             data:{},
             card:[],
-            showPo:false
+            showPo:false,
+            payData:{}
         }
     }
     componentDidMount(){
         if(this.props.history.location.state){
+            var time=dateformat(new Date().toLocaleDateString());
             this.setState({
-                data:Object.assign({},this.props.history.location.state)
+                data:Object.assign({},this.props.history.location.state),
             })
+            Ajax({
+                router:'/payment/paymentdeal/get',
+                session:true,
+                data:{
+                    orderNo:this.state.data.no
+                },
+                callback:(data)=>{
+                    this.setState({
+                        payData:data.rows[0],
+                        time:time
+                    },()=>{
+                    if(this.barcode&&this.state.time===this.state.data.sfsCreate.split(' ')[0].replace(/-/g,'/')&&this.state.payData.cardType===1) {
+                        JsBarcode(this.barcode, this.state.data.id, {
+                            displayValue: false,
+                            lineColor: '#333'
+                        })
+                    }})
+                }
+            })
+
             this.getBind()
         }else{
             this.props.history.push('/index/my/myorder')
         }
 
     }
+
     payStatus=(status)=>{//返回支付状态
         switch(status){
             case 1:
@@ -87,7 +111,6 @@ export default class OrderDetails extends Component{
         }
     };
     chooseback=(val)=>{
-        console.log(val);
         console.log(this.state.data)
 
     }
@@ -120,13 +143,24 @@ export default class OrderDetails extends Component{
                     <div className="line"></div>
                     <div className="list clearfix"><span className="label">订单时间</span> <span className="text time">{this.state.data.sfsCreate?this.state.data.sfsCreate.split('.')[0]:''}</span></div>
                     <div className="list no clearfix"><span className="label">订单号</span> <span className="text">{this.state.data.no}</span></div>
-                    <div className="button">
-                        {
-                            this.state.data.payStatus===1?  <Button className="payorder" onClick={()=>{this.showpopup()}}>订单支付</Button>:
-                            <Button  type="primary" onClick={()=>{window.history.go(-1)}}>返回</Button>
-                        }
 
-                    </div>
+                </div>
+                {
+                    this.state.data.payStatus===2&&this.state.time===this.state.data.sfsCreate.split(' ')[0].replace(/-/g,'/')&&this.state.payData.cardType===1?
+                        <div className="code"><span className="title">撤销码</span>
+                            <div className="bar-Code">
+                                <img id="barcode" ref={el=>this.barcode=el} alt="条形码" />
+                                <br/>
+                                <p>{this.state.data.id}</p>
+                            </div>
+                        </div>:''
+                }
+                <div className="button">
+                    {
+                        this.state.data.payStatus===1?  <Button className="payorder" onClick={()=>{this.showpopup()}}>订单支付</Button>:
+                            <Button  type="primary" onClick={()=>{window.history.go(-1)}}>返回</Button>
+                    }
+
                 </div>
                 <Modal
                     popup

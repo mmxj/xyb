@@ -39,11 +39,11 @@ class MyOrder extends Component{
                 payStatus:cookie.load('payStatus')
             })
         }
-        setTimeout(()=>{  this.getorder();},0)
+        this.time2=setTimeout(()=>{  this.getorder();},0)
 
     }
     componentWillUnmount(){
-        clearTimeout(this.time)
+        clearTimeout(this.time2)
         this.props.downRefre(()=>{return });
     }
     downRefre=(ref)=>{
@@ -52,12 +52,9 @@ class MyOrder extends Component{
            if(this.state.dataMore){
                this.setState({
                    loading:true
-               })
-               clearTimeout(this.time)
-               this.time= setTimeout(()=>{
+               },()=>{
                    this.onRefresh()
-
-               },200)
+               })
            }else{
                this.setState({
                    showNodata:true
@@ -70,10 +67,9 @@ class MyOrder extends Component{
         time++
         this.setState({
             pageNum:time
-        });
-        setTimeout(()=>{
+        },()=>{
             this.getorder()
-        },1000)
+        });
 
     }
     getorder=()=>{

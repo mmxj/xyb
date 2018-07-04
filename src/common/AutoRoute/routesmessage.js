@@ -27,9 +27,13 @@ import AddResult from '@/routes/My/MyCard/AddResult' //添加新卡
 import MyOrder from '@/routes/My/MyOrder' //我的订单
 import OrderDetails from '@/routes/My/MyOrder/OrderDetails' //订单详情
 
-import MySetting from '@/routes/My/MySetting' //设置
-import ChangePassword from '@/routes/My/MySetting/ChangePassword' //设置
+import MyAbout from '@/routes/My/MyAbout' //关于我们
 
+import FAQ from '@/routes/My/FAQ' //常见问题
+import FAQContent from '@/routes/My/FAQ/FAQContent' //常见问题详情
+
+import MySetting from '@/routes/My/MySetting' //设置
+import ChangePassword from '@/routes/My/MySetting/ChangePassword' //修改密码
 
 export default  function routesmessage(pathname){ //设置route页面地方
     /*
@@ -188,6 +192,27 @@ export default  function routesmessage(pathname){ //设置route页面地方
             return clone({
                 component:ChangePassword,
                 title:'修改密码',
+                showFooter:false,
+                back:true
+            })
+        case '/index/my/myabout': //设置
+            return clone({
+                component:MyAbout,
+                title:'关于我们',
+                showFooter:false,
+                back:true
+            })
+        case '/index/my/faq': //faq
+            return clone({
+                component:FAQ,
+                title:'常见问题',
+                showFooter:false,
+                back:true
+            })
+        case '/index/my/faq/faqcontent': //faq详情
+            return clone({
+                component:FAQContent,
+                title:'常见问题',
                 showFooter:false,
                 back:true
             })

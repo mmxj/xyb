@@ -6,3 +6,12 @@ export const removespace=function(number){
     return num.join('')
 
 }
+export const dateformat= function(time){
+    var timeArr = time.split('/');
+    for(var i in time){
+        if(timeArr[i]<10){
+            timeArr[i]='0'+timeArr[i]
+        }
+    }
+    return timeArr.join('/')
+}

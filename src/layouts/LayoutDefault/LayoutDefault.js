@@ -48,6 +48,10 @@ class LayoutDefault extends Component{
                     &&window.location.hash!=='#/index/moreartice'
                     &&window.location.hash!=='#/index/article'
                     &&window.location.hash!=='#/index/my/mysetting'
+                    &&window.location.hash!=='#/index/my/myabout'
+                    &&window.location.hash!=='#/index/my/faq'
+                    &&window.location.hash!=='#/index/my/faq/faqcontent'
+                    &&window.location.hash!=='#/404'
                 ){
                     if(!this.props.status&&window.location.hash!=='#/index/login'){
                         this.props.history.push('/index/login')

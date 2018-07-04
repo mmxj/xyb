@@ -69,8 +69,8 @@
   margin-top: 0.3rem;
   margin-bottom: 0.1rem;
 }
-#OrderDetails .top-card .button {
-  margin-top: 0.2rem;
+#OrderDetails .button {
+  margin: 0 0.4rem;
 }
 #OrderDetails .am-button {
   font-size: 0.32rem;
@@ -79,4 +79,28 @@
   font-size: 0.32rem;
   color: #fff;
   background: #ff4e2c;
+}
+#OrderDetails .code {
+  padding: 0.2rem;
+  border-top: 0.2rem solid #f3f3f3;
+}
+#OrderDetails .code .title {
+  font-size: 0.24rem;
+  color: #999;
+  display: inline-block;
+  padding: 0.1rem 0 0.15rem 0.2rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+#OrderDetails .code .bar-Code {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.52rem;
+}
+#OrderDetails .code .bar-Code img {
+  width: 6.06rem;
+  height: 1.66rem;
+}
+#OrderDetails .code .bar-Code p {
+  margin: 0;
 }

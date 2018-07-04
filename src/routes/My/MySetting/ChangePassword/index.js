@@ -33,7 +33,7 @@ export default class ChangePassword extends Component{
             Toast.info('请确认新密码');
             return
         }
-        if(newPassword!=checkPassword){
+        if(newPassword!==checkPassword){
             Toast.info('两次输入的密码不一致');
             return
         }
