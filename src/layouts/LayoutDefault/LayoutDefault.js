@@ -54,7 +54,7 @@ class LayoutDefault extends Component{
                     &&window.location.hash!=='#/404'
                 ){
                     if(!this.props.status&&window.location.hash!=='#/index/login'){
-                        this.props.history.push('/index/login')
+                        this.props.history.replace('/index/login')
                     }
                 }
             }
@@ -71,12 +71,12 @@ class LayoutDefault extends Component{
 
     }
     goback(){
-        if(window.location.hash==="#/index/login" ||window.location.hash==='#/index/signin'
-            ||window.location.hash==='#/index/password'){
-            window.history.go(-2)
-        }else{
+        // if(window.location.hash==="#/index/login" ||window.location.hash==='#/index/signin'
+        //     ||window.location.hash==='#/index/password'){
+        //     window.history.go(-2)
+        // }else{
             window.history.back()
-        }
+        // }
 
     }
     render(){

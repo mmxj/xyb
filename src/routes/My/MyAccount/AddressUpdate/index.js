@@ -12,12 +12,12 @@ class AddressUpdate extends Component {
         this.updateaddress=this.updateaddress.bind(this);
         this.props.submit(this.updateaddress);
         if(!this.props.location.state){
-            this.props.history.push('/index/my/myaccount')
+            this.props.history.replace('/index/my/myaccount')
         }
     }
     componentDidMount(){
         if(!this.props.location.state){
-            this.props.history.push('/index/my/myaccount');
+            this.props.history.replace('/index/my/myaccount');
             return
         }
         this.AddressUpdateaddress.value=this.props.location.state.data.address;

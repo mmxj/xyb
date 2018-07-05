@@ -12,12 +12,12 @@ class EmailUpdate extends Component {
         this.updatemail=this.updatemail.bind(this);
         this.props.submit(this.updatemail);
         if(!this.props.location.state){
-            this.props.history.push('/index/my/myaccount')
+            this.props.history.replace('/index/my/myaccount')
         }
     }
     componentDidMount(){
         if(!this.props.location.state){
-            this.props.history.push('/index/my/myaccount');
+            this.props.history.replace('/index/my/myaccount');
             return
         }
       this.EmailUpdateemail.value=this.props.location.state.data.email;

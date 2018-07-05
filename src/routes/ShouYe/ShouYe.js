@@ -48,14 +48,14 @@ class ShouYe extends Component {
                                 <span>待付订单</span>
                             </div>
                         </Flex.Item>
-                        <Flex.Item>
+                        <Flex.Item onClick={()=>{this.props.history.push('/index/socialquery')}}>
                             <div className="tag border-r">
                                 <img src={shebaoLogo} alt="" className="menu" />
                                 <br/>
                                 <span>社保查询</span>
                             </div>
                         </Flex.Item>
-                        <Flex.Item>
+                        <Flex.Item onClick={()=>{this.props.history.push('/index/socialpay')}}>
                             <div className="tag">
                                 <img src={shebaopayLogo} alt="" className="menu" />
                                 <br/>

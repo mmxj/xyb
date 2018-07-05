@@ -5,7 +5,15 @@ import Nofind from '@/routes/404'
 import ShouYe from '@/routes/ShouYe/ShouYe' //引入跳转模块 //首页
 
 import Article from '@/routes/ShouYe/subpage/Articles' //文章详情
-import MoreArticle from '@/routes/ShouYe/subpage/MoreArticle' //引入子页面 //更多文章
+import MoreArticle from '@/routes/ShouYe/subpage/MoreArticle' //引入子页面 //更多文章、
+import SocialQuery from '@/routes/ShouYe/subpage/SocialQuery' //社保查询
+import SocialBasic from '@/routes/ShouYe/subpage/SocialQuery/SocialBasic' //社保查询
+import SocialPayment from '@/routes/ShouYe/subpage/SocialQuery/SocialPayment' //社保查询
+import SocialFamily from '@/routes/ShouYe/subpage/SocialQuery/SocialFamily' //家庭参保
+import SocialBalance from '@/routes/ShouYe/subpage/SocialQuery/SocialBalance' //家庭参保
+
+import SocialPay from '@/routes/ShouYe/subpage/SocialPay' //社保缴费
+
 
 import Medical from '@/routes/Medical/Medical' //医疗
 
@@ -27,7 +35,15 @@ import AddResult from '@/routes/My/MyCard/AddResult' //添加新卡
 import MyOrder from '@/routes/My/MyOrder' //我的订单
 import OrderDetails from '@/routes/My/MyOrder/OrderDetails' //订单详情
 
+import MedicalOrder from '@/routes/My/MedicalOrder' //医疗转运订单
+
+import MySocial from '@/routes/My/MySocial' //我的社保
+import SocialAccount from '@/routes/My/MySocial/SocialAccount' //社保账号
+import MySocialFamily  from '@/routes/My/MySocial/SocialFamily' //家人社保
+import AddFamily  from '@/routes/My/MySocial/SocialFamily/AddFamily' //家人社保
+
 import MyAbout from '@/routes/My/MyAbout' //关于我们
+import MyOpinion from '@/routes/My/MyOpinion'//用户反馈
 
 import FAQ from '@/routes/My/FAQ' //常见问题
 import FAQContent from '@/routes/My/FAQ/FAQContent' //常见问题详情
@@ -83,6 +99,49 @@ export default  function routesmessage(pathname){ //设置route页面地方
                 showFooter:false,
                 back:true
             })
+        case '/index/socialquery': //社保 查询
+            return  clone({
+                component:SocialQuery,
+                title:'社保查询',
+                showFooter:false,
+                back:true
+            })
+        case '/index/socialquery/socialbasic': //社保 基本信息查询
+            return  clone({
+                component:SocialBasic,
+                title:'基本信息',
+                showFooter:false,
+                back:true
+            })
+        case '/index/socialquery/socialpayment': //社保 医保缴费
+            return  clone({
+                component:SocialPayment,
+                title:'医保缴费',
+                showFooter:false,
+                back:true
+            })
+        case '/index/socialquery/socialfamily': //社保 家庭参保
+            return  clone({
+                component:SocialFamily,
+                title:'家人参保信息',
+                showFooter:false,
+                back:true
+            })
+        case '/index/socialquery/socialbalance': //社保 社保余额
+            return  clone({
+                component:SocialBalance,
+                title:'社保余额',
+                showFooter:false,
+                back:true
+            })
+         case '/index/socialpay': //社保缴费
+            return  clone({
+                component:SocialPay,
+                title:'缴费',
+                showFooter:false,
+                back:true
+            })
+
         case '/index/medical': //医疗
             return clone({
                 component:Medical,
@@ -188,14 +247,14 @@ export default  function routesmessage(pathname){ //设置route页面地方
                 showFooter:false,
                 back:true
             })
-        case '/index/my/mysetting/changepassword': //设置
+        case '/index/my/mysetting/changepassword': //设置修改密码
             return clone({
                 component:ChangePassword,
                 title:'修改密码',
                 showFooter:false,
                 back:true
             })
-        case '/index/my/myabout': //设置
+        case '/index/my/myabout': //关于我们
             return clone({
                 component:MyAbout,
                 title:'关于我们',
@@ -215,6 +274,49 @@ export default  function routesmessage(pathname){ //设置route页面地方
                 title:'常见问题',
                 showFooter:false,
                 back:true
+            })
+        case '/index/my/myopinion': //意见反馈
+            return clone({
+                component:MyOpinion,
+                title:'意见反馈',
+                showFooter:false,
+                back:true
+            })
+        case '/index/my/medicalorder':
+            return clone({
+                component:MedicalOrder,
+                title:'转运订单',
+                showFooter:false,
+                back:true
+            })
+        case '/index/my/mysocial':
+            return clone({
+                component:MySocial,
+                title:'我的社保',
+                showFooter:false,
+                back:true
+            })
+        case '/index/my/mysocial/socialaccount':
+            return clone({
+                component:SocialAccount,
+                title:'社保账号',
+                showFooter:false,
+                back:true
+            })
+        case '/index/my/mysocial/socialfamily':
+            return clone({
+                component:MySocialFamily,
+                title:'我的家人',
+                showFooter:false,
+                back:true,
+                cardAdd:true
+            })
+        case '/index/my/mysocial/socialfamily/addfamily':
+            return clone({
+                component:AddFamily,
+                title:'我的家人',
+                showFooter:false,
+                back:true,
             })
         default :
             return clone({

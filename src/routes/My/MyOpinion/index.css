@@ -1,0 +1,28 @@
+#MyOpinion {
+  height: 100%;
+  padding-top: 0.2rem;
+}
+#MyOpinion .textarea-item {
+  margin: 0 0.2rem;
+  background: #fff;
+  font-size: 0.28rem;
+  padding: 0 0.2rem;
+  position: relative;
+  height: 3rem;
+  -webkit-border-radius: 0.1rem;
+  -moz-border-radius: 0.1rem;
+  border-radius: 0.1rem;
+}
+#MyOpinion .textarea-item textarea {
+  font-size: 0.28rem;
+}
+#MyOpinion .textarea-item .am-textarea-count {
+  font-size: 0.28rem;
+  margin-right: 0.1rem;
+}
+#MyOpinion .textarea-item .am-textarea-count span {
+  color: #27b7fe;
+}
+#MyOpinion .option-button {
+  margin: 0.5rem 0.2rem;
+}

@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
-import {Flex} from 'antd-mobile';
+import {Flex,Modal} from 'antd-mobile';
 import cookie from 'react-cookies'
 import './My.less';
+const alert=Modal.alert;
 export default class My extends Component {
     constructor(props){
         super(props);
@@ -44,7 +45,7 @@ export default class My extends Component {
                     </Flex.Item>
                 </Flex>
                 <div className="navlist">
-                    <div className="listButton" onClick={()=>{this.goroute('my/myaccount')}}>
+                    <div className="listButton" onClick={()=>{this.props.history.push('my/myaccount')}}>
                         <svg key="27" className="icon" aria-hidden="true">
                             <use xlinkHref="#icon-xiangyinbaoicon-27"></use>
                         </svg>
@@ -53,7 +54,7 @@ export default class My extends Component {
                             <use xlinkHref="#icon-xiangyinbaoicon-2"></use>
                         </svg>
                     </div>
-                    <div className="listButton">
+                    <div className="listButton" onClick={()=>{this.props.history.push('my/mysocial')}}>
                         <svg key="30" className="icon" aria-hidden="true">
                             <use xlinkHref="#icon-xiangyinbaoicon-30"></use>
                         </svg>
@@ -62,7 +63,9 @@ export default class My extends Component {
                             <use xlinkHref="#icon-xiangyinbaoicon-2"></use>
                         </svg>
                     </div>
-                    <div className="listButton">
+                    <div className="listButton"  onClick={()=>{
+                         alert('该功能尚未开放')
+                        }} >
                         <svg key="33" className="icon" aria-hidden="true">
                             <use xlinkHref="#icon-xiangyinbaoicon-33"></use>
                         </svg>
@@ -73,7 +76,7 @@ export default class My extends Component {
                     </div>
                 </div>
                 <div className="navlist">
-                    <div className="listButton">
+                    <div className="listButton"  onClick={()=>{this.goroute('my/myopinion')}}>
                         <svg key="0" className="icon" aria-hidden="true">
                             <use xlinkHref="#icon-xiangyinbaoicon-28"></use>
                         </svg>

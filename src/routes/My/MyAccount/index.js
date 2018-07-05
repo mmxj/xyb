@@ -46,7 +46,7 @@ class MyAccount extends Component {
         }
     }
     routeGo(url){
-        this.props.history.push({pathname:url, state:{data:this.state.data}})
+        this.props.history.replace({pathname:url, state:{data:this.state.data}})
     }
     cardName(type){
         if(type===1){return "社保卡"}else if(type===3){return "银联卡"}else{return "其他卡"}

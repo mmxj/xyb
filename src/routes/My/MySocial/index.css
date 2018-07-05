@@ -1,0 +1,66 @@
+#MySocial {
+  height: 100%;
+}
+#MySocial .list-top {
+  background: #29bfff;
+  height: 2.3rem;
+  box-sizing: border-box;
+}
+#MySocial .list-top .list-left {
+  display: inline-block;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0.5rem 0 0 0.4rem;
+}
+#MySocial .list-top .list-left .userLogo {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.2rem;
+}
+#MySocial .list-top .list-left .userInform {
+  display: inline-block;
+  color: #fff;
+  vertical-align: top;
+  padding-top: 0.1rem;
+}
+#MySocial .list-top .list-left .userInform p {
+  line-height: 0.6rem;
+  margin: 0;
+  padding: 0;
+}
+#MySocial .list-top .list-right {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+  padding-top: 0.9rem;
+}
+#MySocial .list-top .list-right .become {
+  padding: 0.1rem 0.3rem;
+  background: #fff;
+  display: inline-block;
+  float: right;
+  border-radius: 0.25rem;
+  color: #27b7fe;
+  margin-right: 0.4rem;
+}
+#MySocial .list-bottom {
+  margin-top: 0.2rem;
+  background: #fff;
+  padding: 0 0.4rem;
+}
+#MySocial .list-bottom .list {
+  height: 1rem;
+  line-height: 1rem;
+  border-bottom: 0.01rem solid #eee;
+  font-size: 0.26rem;
+  color: #555;
+}
+#MySocial .list-bottom .list .icon {
+  width: 0.24rem;
+  margin-top: 0.36rem;
+  float: right;
+}
+#MySocial .list-bottom .list:last-child {
+  border: 0;
+}

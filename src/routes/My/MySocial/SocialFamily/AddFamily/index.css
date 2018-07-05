@@ -1,0 +1,71 @@
+#AddFamily {
+  height: 100%;
+  font-size: 0.28rem;
+}
+#AddFamily .list-wrap {
+  background: #fff;
+}
+#AddFamily .list-wrap .list {
+  margin: 0 0.4rem;
+  border-bottom: 1px solid #eee;
+}
+#AddFamily .list-wrap .list span {
+  display: inline-block;
+  width: 2.1rem;
+  height: 1rem;
+  line-height: 1rem;
+}
+#AddFamily .list-wrap .list input {
+  width: calc(100% - 2.1rem);
+  border: 0;
+  height: 1rem;
+  line-height: 1rem;
+}
+#AddFamily .list-wrap .list .list-select {
+  display: inline-block;
+  width: calc(100% - 2.1rem);
+  text-align: left;
+  padding: 0;
+  height: 100%;
+  border: 0;
+}
+#AddFamily .list-wrap .list .list-select .am-list-arrow {
+  position: absolute;
+  right: 0.2rem;
+}
+#AddFamily .list-wrap .list .list-select .am-list-extra {
+  font-size: 0.28rem;
+  flex-basis: 100%;
+}
+#AddFamily .list-wrap .list .list-select .am-list-body:before {
+  border: 0;
+  height: 0;
+}
+#AddFamily .list-wrap .list .list-select .am-list-body:after {
+  border: 0;
+  height: 0;
+}
+#AddFamily .list-wrap .list .list-select .am-list-item .am-list-item-middle {
+  padding: 0;
+}
+#AddFamily .list-wrap .list .list-select .am-list-item {
+  padding: 0;
+}
+#AddFamily .list-wrap .list .list-select .am-list-extra {
+  text-align: left;
+}
+#AddFamily .list-wrap .list:last-child {
+  border: 0;
+}
+#AddFamily .button-wrap {
+  padding: 0.2rem;
+}
+#AddFamily .button-wrap .am-button {
+  font-size: 0.36rem;
+}
+#AddFamily .modal {
+  font-size: 0.24rem;
+  color: #27befe;
+  line-height: 0.3rem;
+  padding: 0.3rem 0.2rem;
+}
